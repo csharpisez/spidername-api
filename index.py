@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_file, redirect
+from flask import Flask, jsonify, request, send_file, redirect, url_for
 from flask_restful import Resource, Api
 from PIL import Image, ImageDraw, ImageFont
 from flask_cors import CORS

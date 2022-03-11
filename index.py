@@ -1,16 +1,17 @@
 from flask import Flask, jsonify, request, send_file
 from flask_restful import Resource, Api
 from PIL import Image, ImageDraw, ImageFont
+from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
 
 class CHK(Resource):
     def get(self):
-        return jsonify({'message': 'RUNNING'})
-    def post(self):
-        data = request.get_json()    
-        return jsonify({'data': data}), 201
+        try:
+            return {'data': "API RUNNING"}
+        except(error):
+            return{'data': error}
   
   
 def imageman(txt):
@@ -48,4 +49,4 @@ api.add_resource(Manipulator, '/man/<string:txt>')
   
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run()

@@ -5,6 +5,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 api = Api(app)
+CORS(app)
 
 class CHK(Resource):
     def get(self):

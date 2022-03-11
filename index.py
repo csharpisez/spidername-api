@@ -37,8 +37,7 @@ def imageman(txt):
 
     res_img = Image.composite(fgr_img, bgr_img, mask_img)
     res_img.save('/tmp/resdownload.png')
-    send_file('/tmp/resdownload.png', as_attachment=True)
-    return 1
+    return redirect(url_for('static', filename='/tmp/resdownload.png'), code=301)
 
 class Manipulator(Resource):
     def get(self, txt):

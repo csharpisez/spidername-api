@@ -11,6 +11,8 @@ class CHK(Resource):
     def get(self):
         try:
             return {'data': "API RUNNING"}
+        except(error):
+            return{'data': error}
   
   
 def imageman(txt):
@@ -34,8 +36,8 @@ def imageman(txt):
     mask_img_draw.text((tx, ty), THE_TEXT, fill=0, font=font, align='center')
 
     res_img = Image.composite(fgr_img, bgr_img, mask_img)
-    res_img.save('tmp/resdownload.png')
-    return send_file('tmp/resdownload.png', as_attachment=True)
+    res_img.save('/tmp/resdownload.png')
+    return send_file('/tmp/resdownload.png', as_attachment=True)
 
 class Manipulator(Resource):
     def get(self, txt):

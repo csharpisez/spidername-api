@@ -26,7 +26,7 @@ def imageman(txt):
     fgr_img = Image.new('RGBA', bgr_img.size, color=(0, 0, 0, 0))
 
     font_size = bgr_img_width//len(THE_TEXT)
-    font = ImageFont.truetype('Fonts/Spider-Man.otf', font_size)
+    font = ImageFont.truetype('Font/Spider-Man.otf', font_size)
 
     txt_width, txt_height = font.getsize(THE_TEXT)  
     tx, ty = cx - txt_width//2, cy - txt_height//2  

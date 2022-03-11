@@ -11,8 +11,6 @@ class CHK(Resource):
     def get(self):
         try:
             return {'data': "API RUNNING"}
-        except(error):
-            return{'data': error}
   
   
 def imageman(txt):

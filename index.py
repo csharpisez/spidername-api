@@ -42,7 +42,7 @@ def imageman(txt):
 class Manipulator(Resource):
     def get(self, txt):
         imageman(txt)
-        return 0
+        return send_file('/tmp/resdownload.png', as_attachment=True)
   
 
 api.add_resource(CHK, '/')
